@@ -75,7 +75,10 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewCell", for: indexPath)
-        cell.textLabel?.text = vm.messagesList[indexPath.row]
+        let message = vm.messagesList[indexPath.row]
+        cell.textLabel?.text = message
+        cell.textLabel?.textColor = message.contains("sent:") ? .green : .red
+        
         return cell
     }
 }

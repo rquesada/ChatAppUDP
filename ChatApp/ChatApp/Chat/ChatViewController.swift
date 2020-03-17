@@ -1,5 +1,5 @@
 //
-//  DevicesListViewController.swift
+//  ChatViewController.swift
 //  ChatApp
 //
 //  Created by Roy Quesada on 3/16/20.
@@ -8,29 +8,26 @@
 
 import UIKit
 
-class DevicesListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var myTableView: UITableView!
-    var vm = DevicesListViewModel()
+    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var messageTxt: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myTableView.register(UITableViewCell.self, forCellReuseIdentifier: "DeviceTableViewCell")
-        self.vm.getDevices {
-            DispatchQueue.main.async {
-                self.myTableView.reloadData()
-            }
-        }
     }
     
     // MARK - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.vm.devicesList.count
+        return NetworkManager.shared.devicesList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DeviceTableViewCell", for: indexPath)
-        cell.textLabel?.text = self.vm.devicesList[indexPath.row]
+        cell.textLabel?.text = NetworkManager.shared.devicesList[indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
     }
@@ -40,4 +37,5 @@ class DevicesListViewController: UIViewController, UITableViewDelegate, UITableV
         print("Sent message")
         self.performSegue(withIdentifier: "chatSegue", sender: nil)
     }
+
 }

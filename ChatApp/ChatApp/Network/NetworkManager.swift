@@ -15,7 +15,7 @@ class NetworkManager: NSObject {
     private var hostUDP: NWEndpoint.Host = "localhost"
     private var portUDP: NWEndpoint.Port = 9876
     
-    typealias CompletionHandler = (_ success:Bool) -> Void
+    var devicesList = [String]()
     
     //Initializer access level change now
     private override init(){}
@@ -35,9 +35,6 @@ class NetworkManager: NSObject {
 
     
     func connectToUDP(_ hostUDP: NWEndpoint.Host, _ portUDP: NWEndpoint.Port) {
-        // Transmited message:
-        let messageToUDP = "Test message 2"
-
         self.connection = NWConnection(host: hostUDP, port: portUDP, using: .udp)
 
         self.connection?.stateUpdateHandler = { (newState) in
@@ -45,8 +42,6 @@ class NetworkManager: NSObject {
             switch (newState) {
                 case .ready:
                     print("State: Ready\n")
-                    self.sendUDP(messageToUDP)
-                    self.receiveUDP()
                 case .setup:
                     print("State: Setup\n")
                 case .cancelled:
@@ -82,17 +77,30 @@ class NetworkManager: NSObject {
         })))
     }
     
-    func receiveUDP() {
+    func receiveUDP(completion: @escaping (String) -> ()) {
         self.connection?.receiveMessage { (data, context, isComplete, error) in
             if (isComplete) {
                 print("Receive is complete")
                 if (data != nil) {
-                    let backToString = String(decoding: data!, as: UTF8.self)
-                    print("Received message: \(backToString)")
+                    let messageString = String(decoding: data!, as: UTF8.self)
+                    completion(messageString)
+                    /*print("Received message: \(backToString)")
+                    self.decodeMessage(message: backToString)*/
                 } else {
-                    print("Data == nil")
+                    completion("")
                 }
+            }else{
+                completion("")
             }
+        }
+    }
+    
+    func decodeMessage(message:String){
+        if message.contains("connections:"){
+            print("Parse List")
+            var alldevices:[String] = message.components(separatedBy: ":")
+            alldevices.removeFirst(1)
+            self.devicesList = alldevices
         }
     }
     

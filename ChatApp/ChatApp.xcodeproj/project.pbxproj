@@ -16,6 +16,13 @@
 		76CA2E922420485B00912500 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA2E912420485B00912500 /* HomeViewController.swift */; };
 		76CA2E952420498D00912500 /* DevicesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA2E942420498D00912500 /* DevicesListViewController.swift */; };
 		76CA2E98242049D400912500 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA2E97242049D400912500 /* NetworkManager.swift */; };
+		76CD14242420711500E28ADE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD14232420711500E28ADE /* Utilities.swift */; };
+		76CD142824207D2B00E28ADE /* DeviceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD142624207D2B00E28ADE /* DeviceTableViewCell.swift */; };
+		76CD142924207D2B00E28ADE /* DeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CD142724207D2B00E28ADE /* DeviceTableViewCell.xib */; };
+		76CD142E2420852D00E28ADE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD142D2420852D00E28ADE /* ChatViewController.swift */; };
+		76CD1433242089EC00E28ADE /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD1431242089EC00E28ADE /* ChatTableViewCell.swift */; };
+		76CD1434242089EC00E28ADE /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CD1432242089EC00E28ADE /* ChatTableViewCell.xib */; };
+		76CD143724208B8100E28ADE /* DevicesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD143624208B8100E28ADE /* DevicesListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		76CA2E912420485B00912500 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		76CA2E942420498D00912500 /* DevicesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListViewController.swift; sourceTree = "<group>"; };
 		76CA2E97242049D400912500 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		76CD14232420711500E28ADE /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		76CD142624207D2B00E28ADE /* DeviceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTableViewCell.swift; sourceTree = "<group>"; };
+		76CD142724207D2B00E28ADE /* DeviceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceTableViewCell.xib; sourceTree = "<group>"; };
+		76CD142D2420852D00E28ADE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		76CD1431242089EC00E28ADE /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		76CD1432242089EC00E28ADE /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		76CD143624208B8100E28ADE /* DevicesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				76CD14222420706B00E28ADE /* Util */,
+				76CD142A242082E500E28ADE /* Chat */,
 				76CA2E96242049B900912500 /* Network */,
 				76CA2E932420494900912500 /* DevicesList */,
 				76CA2E902420483000912500 /* Home */,
@@ -88,6 +103,8 @@
 		76CA2E932420494900912500 /* DevicesList */ = {
 			isa = PBXGroup;
 			children = (
+				76CD143524208B5700E28ADE /* ViewModel */,
+				76CD142524207D0A00E28ADE /* View */,
 				76CA2E942420498D00912500 /* DevicesListViewController.swift */,
 			);
 			path = DevicesList;
@@ -104,8 +121,44 @@
 		76CD14222420706B00E28ADE /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				76CD14232420711500E28ADE /* Utilities.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		76CD142524207D0A00E28ADE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76CD142624207D2B00E28ADE /* DeviceTableViewCell.swift */,
+				76CD142724207D2B00E28ADE /* DeviceTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76CD142A242082E500E28ADE /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				76CD1430242089C900E28ADE /* view */,
+				76CD142D2420852D00E28ADE /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		76CD1430242089C900E28ADE /* view */ = {
+			isa = PBXGroup;
+			children = (
+				76CD1431242089EC00E28ADE /* ChatTableViewCell.swift */,
+				76CD1432242089EC00E28ADE /* ChatTableViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		76CD143524208B5700E28ADE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				76CD143624208B8100E28ADE /* DevicesListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +221,9 @@
 			files = (
 				76CA2E89242041BE00912500 /* LaunchScreen.storyboard in Resources */,
 				76CA2E86242041BE00912500 /* Assets.xcassets in Resources */,
+				76CD1434242089EC00E28ADE /* ChatTableViewCell.xib in Resources */,
 				76CA2E84242041BB00912500 /* Main.storyboard in Resources */,
+				76CD142924207D2B00E28ADE /* DeviceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +236,15 @@
 			files = (
 				76CA2E98242049D400912500 /* NetworkManager.swift in Sources */,
 				76CA2E81242041BB00912500 /* ViewController.swift in Sources */,
+				76CD14242420711500E28ADE /* Utilities.swift in Sources */,
+				76CD143724208B8100E28ADE /* DevicesListViewModel.swift in Sources */,
 				76CA2E7D242041BB00912500 /* AppDelegate.swift in Sources */,
 				76CA2E952420498D00912500 /* DevicesListViewController.swift in Sources */,
 				76CA2E7F242041BB00912500 /* SceneDelegate.swift in Sources */,
 				76CA2E922420485B00912500 /* HomeViewController.swift in Sources */,
+				76CD1433242089EC00E28ADE /* ChatTableViewCell.swift in Sources */,
+				76CD142E2420852D00E28ADE /* ChatViewController.swift in Sources */,
+				76CD142824207D2B00E28ADE /* DeviceTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -153,8 +153,7 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="JpQ-Ai-jGr" id="wZ6-cH-hKV"/>
-                                    <outlet property="delegate" destination="JpQ-Ai-jGr" id="L8G-6B-foa"/>
+                                    <outlet property="dataSource" destination="JpQ-Ai-jGr" id="XVW-LQ-dGV"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWY-Px-uz2">
@@ -171,6 +170,9 @@
                                             <constraint firstAttribute="width" constant="36" id="OUu-gX-f9V"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendHandler:" destination="JpQ-Ai-jGr" eventType="touchUpInside" id="EQz-Pu-e9a"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -201,6 +203,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CAH-1e-vxo"/>
                     <connections>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="fag-SP-qwk" id="mBq-Ra-GtK"/>
                         <outlet property="messageTxt" destination="uMr-Lh-bDd" id="Ihr-Bg-hgr"/>
                         <outlet property="myTableView" destination="PxB-so-vFa" id="75u-8k-Tqb"/>
                         <outlet property="sendBtn" destination="gDd-Ti-O7P" id="JSS-A9-byE"/>

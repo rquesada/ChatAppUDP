@@ -10,6 +10,7 @@ import UIKit
 
 class DevicesListViewModel: NSObject {
     
+    var selectedDevice =  ""
     var devicesList = [String]()
     
     func getDevices(completion: @escaping () -> ()){

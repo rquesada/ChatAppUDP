@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var ipTxt: UITextField!
     @IBOutlet weak var portTxt: UITextField!
     
+    var vm = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func connectHandler(_ sender: Any) {
-        NetworkManager.shared.requestForConnection(host: self.ipTxt.text, port:self.portTxt.text)
+        self.vm.connectToServer(host: self.ipTxt.text, port: self.portTxt.text)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.performSegue(withIdentifier: "showDevicesSegue", sender: nil)
         }

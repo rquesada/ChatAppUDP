@@ -36,8 +36,13 @@ class ChatViewModel: NSObject {
     }
     
     func decodeMessage(_ message:String){
-        if message.contains("sent:"){
-            
-        }
+        addMessageToCache(message)
+    }
+    
+    func addMessageToCache(_ message:String){
+        var cacheMessages = UserDefaults.standard.array(forKey: selectedDevice) ?? [String]()
+        cacheMessages.append("received: \(message)")
+        UserDefaults.standard.set(cacheMessages, forKey : selectedDevice)
+        self.getMessagefor(ip: selectedDevice)
     }
 }

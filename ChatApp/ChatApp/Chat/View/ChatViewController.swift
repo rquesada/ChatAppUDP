@@ -39,7 +39,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func sendHandler(_ sender: Any) {
         guard let message = messageTxt.text else { return }
         vm.sendMessage(message: message)
-        self.myTableView.reloadData()
+        vm.getMessage {
+             DispatchQueue.main.async {
+                self.myTableView.reloadData()
+            }
+        }
     }
     
     @objc func keyboardNotification(notification: NSNotification) {
@@ -53,7 +57,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if endFrameY >= UIScreen.main.bounds.size.height {
                 self.keyboardHeightLayoutConstraint?.constant = 0.0
             } else {
-                var offSet = endFrame?.size.height ?? 0.0
+                let offSet = endFrame?.size.height ?? 0.0
                 self.keyboardHeightLayoutConstraint?.constant = offSet * -1
             }
             UIView.animate(withDuration: duration,

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,95 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome UDP Chat App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHh-XX-lua">
+                                <rect key="frame" x="114" y="246" width="186" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="186" id="212-WG-SYi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMW-Oe-mw1">
+                                <rect key="frame" x="198" y="275" width="18" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roy Quesada" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJd-X4-hdk">
+                                <rect key="frame" x="156.5" y="301" width="101.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skG-AG-rv8">
+                                <rect key="frame" x="114" y="350" width="186" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Port Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hy3-Ig-qxM">
+                                <rect key="frame" x="114" y="402" width="186" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN5-eQ-PnP">
+                                <rect key="frame" x="177.5" y="466" width="59" height="30"/>
+                                <state key="normal" title="Connect"/>
+                                <connections>
+                                    <action selector="connectHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dqa-Bz-htG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hN5-eQ-PnP" firstAttribute="top" secondItem="Hy3-Ig-qxM" secondAttribute="bottom" constant="30" id="9b1-p1-cRm"/>
+                            <constraint firstItem="skG-AG-rv8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bi6-gX-GbP"/>
+                            <constraint firstItem="skG-AG-rv8" firstAttribute="top" secondItem="YJd-X4-hdk" secondAttribute="bottom" constant="28" id="EHS-xR-hvW"/>
+                            <constraint firstItem="CHh-XX-lua" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="202" id="Nh9-F3-TsV"/>
+                            <constraint firstItem="PMW-Oe-mw1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ya2-w6-MGU"/>
+                            <constraint firstItem="Hy3-Ig-qxM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGR-ZQ-2tH"/>
+                            <constraint firstItem="hN5-eQ-PnP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b9V-TN-hff"/>
+                            <constraint firstItem="YJd-X4-hdk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ega-9b-JZW"/>
+                            <constraint firstItem="CHh-XX-lua" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nCR-Az-6s0"/>
+                            <constraint firstItem="skG-AG-rv8" firstAttribute="width" secondItem="CHh-XX-lua" secondAttribute="width" id="oI5-fd-XoF"/>
+                            <constraint firstItem="Hy3-Ig-qxM" firstAttribute="width" secondItem="skG-AG-rv8" secondAttribute="width" id="p0m-er-dYp"/>
+                            <constraint firstItem="Hy3-Ig-qxM" firstAttribute="top" secondItem="skG-AG-rv8" secondAttribute="bottom" constant="18" id="qFh-Ui-2dZ"/>
+                            <constraint firstItem="PMW-Oe-mw1" firstAttribute="top" secondItem="CHh-XX-lua" secondAttribute="bottom" constant="8" id="qbJ-Fi-Avz"/>
+                            <constraint firstItem="YJd-X4-hdk" firstAttribute="top" secondItem="PMW-Oe-mw1" secondAttribute="bottom" constant="8" id="zai-AJ-HMc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="connectBtn" destination="hN5-eQ-PnP" id="auH-Zp-ovT"/>
+                        <outlet property="ipTxt" destination="skG-AG-rv8" id="TuO-rq-jJ3"/>
+                        <outlet property="portTxt" destination="Hy3-Ig-qxM" id="vwG-AP-rY7"/>
+                        <segue destination="IIz-eS-YSy" kind="show" identifier="showDevicesSegue" id="kh6-LJ-FI7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+        <!--Devices List View Controller-->
+        <scene sceneID="nVE-Qp-f2k">
+            <objects>
+                <viewController id="IIz-eS-YSy" customClass="DevicesListViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PaZ-lI-Y5k">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="G0m-NJ-lXK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GOG-yH-XgE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ly-Pv-MLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="113"/>
         </scene>
     </scenes>
 </document>

@@ -13,6 +13,9 @@
 		76CA2E84242041BB00912500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CA2E82242041BB00912500 /* Main.storyboard */; };
 		76CA2E86242041BE00912500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76CA2E85242041BE00912500 /* Assets.xcassets */; };
 		76CA2E89242041BE00912500 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76CA2E87242041BE00912500 /* LaunchScreen.storyboard */; };
+		76CA2E922420485B00912500 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA2E912420485B00912500 /* HomeViewController.swift */; };
+		76CA2E952420498D00912500 /* DevicesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA2E942420498D00912500 /* DevicesListViewController.swift */; };
+		76CA2E98242049D400912500 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA2E97242049D400912500 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		76CA2E85242041BE00912500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76CA2E88242041BE00912500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76CA2E8A242041BE00912500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76CA2E912420485B00912500 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		76CA2E942420498D00912500 /* DevicesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListViewController.swift; sourceTree = "<group>"; };
+		76CA2E97242049D400912500 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		76CA2E7B242041BB00912500 /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				76CD14222420706B00E28ADE /* Util */,
+				76CA2E96242049B900912500 /* Network */,
+				76CA2E932420494900912500 /* DevicesList */,
+				76CA2E902420483000912500 /* Home */,
 				76CA2E7C242041BB00912500 /* AppDelegate.swift */,
 				76CA2E7E242041BB00912500 /* SceneDelegate.swift */,
-				76CA2E80242041BB00912500 /* ViewController.swift */,
 				76CA2E82242041BB00912500 /* Main.storyboard */,
 				76CA2E85242041BE00912500 /* Assets.xcassets */,
 				76CA2E87242041BE00912500 /* LaunchScreen.storyboard */,
 				76CA2E8A242041BE00912500 /* Info.plist */,
 			);
 			path = ChatApp;
+			sourceTree = "<group>";
+		};
+		76CA2E902420483000912500 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				76CA2E80242041BB00912500 /* ViewController.swift */,
+				76CA2E912420485B00912500 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		76CA2E932420494900912500 /* DevicesList */ = {
+			isa = PBXGroup;
+			children = (
+				76CA2E942420498D00912500 /* DevicesListViewController.swift */,
+			);
+			path = DevicesList;
+			sourceTree = "<group>";
+		};
+		76CA2E96242049B900912500 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				76CA2E97242049D400912500 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		76CD14222420706B00E28ADE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76CA2E98242049D400912500 /* NetworkManager.swift in Sources */,
 				76CA2E81242041BB00912500 /* ViewController.swift in Sources */,
 				76CA2E7D242041BB00912500 /* AppDelegate.swift in Sources */,
+				76CA2E952420498D00912500 /* DevicesListViewController.swift in Sources */,
 				76CA2E7F242041BB00912500 /* SceneDelegate.swift in Sources */,
+				76CA2E922420485B00912500 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,13 +329,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7AYQTKEJ;
+				DEVELOPMENT_TEAM = YBSCA9MEQ4;
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cecropia.ChatApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,13 +347,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VA7AYQTKEJ;
+				DEVELOPMENT_TEAM = YBSCA9MEQ4;
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cecropia.ChatApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

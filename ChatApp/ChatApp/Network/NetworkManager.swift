@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NetworkManager.swift
 //  ChatApp
 //
 //  Created by Roy Quesada on 3/16/20.
@@ -8,27 +8,35 @@
 
 import UIKit
 import Network
+class NetworkManager: NSObject {
 
-class ViewController: UIViewController {
+    static let shared = NetworkManager()
+    private var connection: NWConnection?
+    private var hostUDP: NWEndpoint.Host = "localhost"
+    private var portUDP: NWEndpoint.Port = 9876
     
-    var connection: NWConnection?
-    var hostUDP: NWEndpoint.Host = "localhost"
-    var portUDP: NWEndpoint.Port = 9876
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    typealias CompletionHandler = (_ success:Bool) -> Void
+    
+    //Initializer access level change now
+    private override init(){}
+    
+    func requestForConnection(host: String?, port:String?){
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            // your code here
-            self.connectToUDP(self.hostUDP,self.portUDP)
+        if let ipHost = host, ipHost != ""{
+            self.hostUDP = NWEndpoint.Host(ipHost)
         }
-
+        
+        if let portN = port, portN != "" {
+            self.portUDP = NWEndpoint.Port(portN) ?? 9876
+        }
+        
+        self.connectToUDP(self.hostUDP, self.portUDP)
     }
+
     
     func connectToUDP(_ hostUDP: NWEndpoint.Host, _ portUDP: NWEndpoint.Port) {
         // Transmited message:
-        let messageToUDP = "Test message"
+        let messageToUDP = "Test message 2"
 
         self.connection = NWConnection(host: hostUDP, port: portUDP, using: .udp)
 
@@ -87,7 +95,5 @@ class ViewController: UIViewController {
             }
         }
     }
-
-
+    
 }
-
